@@ -19,9 +19,9 @@ class ProductRepositoryTest {
 
         MariaDbDataSource dataSource = new MariaDbDataSource();
         try {
-            dataSource.setUrl("jdbc:mariadb://localhost:3306/exam-test?useUnicode=true");
-            dataSource.setUser("root");
-            dataSource.setPassword("training");
+            dataSource.setUrl("jdbc:mariadb://localhost:3306/webshop?useUnicode=true");
+            dataSource.setUser("web");
+            dataSource.setPassword("web");
         } catch (SQLException sqle) {
             throw new IllegalStateException("Cannot reach DataBase!", sqle);
         }
