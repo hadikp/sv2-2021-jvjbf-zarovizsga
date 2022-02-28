@@ -9,6 +9,11 @@ public class ProductService {
     }
 
     public void saleProduct(long id, int amount) {
-        System.out.println();
+        Product productFromDatabase = productRepository.findProductById(id);
+        if(productFromDatabase.getStock() >= amount) {
+            productRepository.updateProductStock(id, amount);
+        } else {
+            throw new IllegalArgumentException("Cannot enough stock!");
+        }
     }
 }

@@ -20,7 +20,7 @@ class ProductServiceTest {
 
         MariaDbDataSource dataSource = new MariaDbDataSource();
         try {
-            dataSource.setUrl("jdbc:mariadb://localhost:3306/exam-test?useUnicode=true");
+            dataSource.setUrl("jdbc:mariadb://localhost:3306/webshop?useUnicode=true");
             dataSource.setUser("web");
             dataSource.setPassword("web");
         } catch (SQLException sqle) {
