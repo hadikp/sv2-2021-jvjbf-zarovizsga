@@ -11,7 +11,7 @@ public class VideoPlatform {
 
     private List<Channel> channels = new ArrayList<>();
 
-    public void makeChannel(Path path, List<String> readFile) {
+    public void makeChannel(List<String> readFile) {
         for(int i = 1; i < readFile.size(); i++) {
             String[] stSplit = readFile.get(i).split(";");
             String channelName = stSplit[0];
@@ -24,7 +24,7 @@ public class VideoPlatform {
     public void readDataFromFile(Path path) {
         try {
             List<String> readFile = Files.readAllLines(path);
-            makeChannel(path, readFile);
+            makeChannel(readFile);
         }
         catch (IOException ioe) {
             throw new IllegalArgumentException("Cannot open file for read!");
